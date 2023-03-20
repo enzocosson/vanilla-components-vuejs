@@ -1,14 +1,17 @@
-<script setup></script>
+<script setup>
+import DefaultHeader from '../components/header/DefaultHeader.vue';
+</script>
 
 <template>
   <div class="right_side_view">
-    <h1>Plug And <span>Code</span></h1>
+    <h1><span>Header</span></h1>
+    <DefaultHeader />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .right_side_view {
-  position: absolute;
+    position: absolute;
     right: 0;
     top: 0;
     width: 85%;

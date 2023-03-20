@@ -1,9 +1,27 @@
-<script setup></script>
+<script setup>
+import { ref } from 'vue'
+const selTheme = ref('front')
+// const setSelTheme = (theme) => {
+//   selTheme.value = theme
+// }
+</script>
 
 <template>
   <div class="menu">
-    <v-btn class="btn"> Front-End </v-btn>
-    <v-btn class="btn"> Back-End </v-btn>
+    <v-btn
+      @click="setSelTheme('front')"
+      :class="[selTheme === 'front' ? 'selected' : 'notSelected', 'btn']"
+      type="button"
+    >
+      Front-End
+    </v-btn>
+    <v-btn
+      @click="setSelTheme('back')"
+      :class="[selTheme === 'back' ? 'selected' : 'notSelected', 'btn']"
+      type="button"
+    >
+      Back-End
+    </v-btn>
   </div>
 </template>
 
@@ -25,6 +43,16 @@
     font-size: 1vw;
     font-weight: bold;
     border-radius: 0.2vw;
+  }
+  .selected {
+    background-color: var(--white);
+    border: 0.2vw solid var(--white);
+    color: var(--orange);
+  }
+  .notSelected {
+    background-color: var(--orange);
+    border: 0.2vw solid var(--white);
+    color: var(--white);
   }
 }
 </style>

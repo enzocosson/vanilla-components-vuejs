@@ -1,12 +1,11 @@
 <script setup>
-import LeftSideView from './components/left_side/LeftSideView.vue'
-import HomeView from './views/HomeView.vue'
+  import LeftSideView from './components/left_side/LeftSideView.vue'
 </script>
 
 <template>
   <div id="app">
     <LeftSideView />
-    <HomeView />
+    <router-view />
   </div>
 </template>
 
