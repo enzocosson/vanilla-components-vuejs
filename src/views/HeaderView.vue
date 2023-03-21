@@ -6,6 +6,11 @@ import DefaultHeader from '../components/header/DefaultHeader.vue';
   <div class="right_side_view">
     <h1><span>Header</span></h1>
     <DefaultHeader />
+    <DefaultHeader />
+    <DefaultHeader />
+    <DefaultHeader />
+    <DefaultHeader />
+    <DefaultHeader />
   </div>
 </template>
 

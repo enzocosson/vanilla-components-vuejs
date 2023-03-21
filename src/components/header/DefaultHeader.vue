@@ -4,40 +4,45 @@ const selCode = ref(false)
 const setSelCode = (code) => {
   selCode.value = code
 }
-console.log(selCode.value)
 </script>
 
 <template>
-  <div class="header__container">
-    <h1>1. Default</h1>
-    <div class="desktop">
-      <h2>Desktop</h2>
-    </div>
-    <div class="tablet">
-      <h2>Tablet</h2>
-    </div>
-    <div class="mobile">
-      <h2>Mobile</h2>
-    </div>
-
-    <v-btn
-      @onClick="setSelCode(true)"
-      :class="[selCode === true ? 'selected' : 'notSelected', 'btn']"
-      type="button"
-    >
-      Reveal Code
-    </v-btn>
-
-    <section v-if="selCode === true" class="code">
-      <div class="html-scss">
-        <div class="html"></div>
-        <div class="scss"></div>
+    <div class="header__container">
+      <h1>1. Default</h1>
+      <div class="desktop">
+        <h2>Desktop</h2>
+        <img class="header_img" src="../../assets/img/header_default/desktop.png" alt="">
       </div>
-      <div class="js"></div>
-    </section>
-    <section v-else></section>
-  </div>
-</template>
+      <div class="tablet">
+        <h2>Tablet</h2>
+        <img class="header_img" src="../../assets/img/header_default/tablet.png" alt="">
+      </div>
+      <div class="mobile">
+        <h2>Mobile</h2>
+        <img class="header_img" src="../../assets/img/header_default/mobile.png" alt="">
+      </div>
+  
+      <v-btn
+        @click="setSelCode(!selCode)"
+        :class="[selCode ? 'selected' : 'notSelected', 'btn']"
+        type="button"
+      >
+        {{ selCode ? 'Hide Code' : 'Reveal Code' }}
+      </v-btn>
+  
+      <section v-if="selCode" class="code">
+        <div class="html-scss">
+          <div class="html">
+            <code>
+              
+            </code>
+          </div>
+          <div class="scss"></div>
+        </div>
+        <div class="js"></div>
+      </section>
+    </div>
+  </template>
 
 <style lang="scss" scoped>
 .header__container {
@@ -58,6 +63,15 @@ console.log(selCode.value)
     color: var(--black);
     font-family: var(--font-secondary);
     font-size: 1vw;
+  }
+  .header_img{
+    height: 7vh;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 4px;
+    transition: 0.3s ease-in-out;
+
+    &:hover{
+      box-shadow: rgba(0, 0, 0, 0.206) 0px 1px 4px;
+    }
   }
   .btn {
     height: 4vh;
