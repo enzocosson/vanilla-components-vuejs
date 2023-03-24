@@ -1,16 +1,15 @@
 <script setup>
-import DefaultHeader from '../components/header/DefaultHeader.vue';
+import HeaderSpaceBetween from '../components/header/HeaderSpaceBetween.vue';
+import HeaderFlexStart from '../components/header/HeaderFlexStart.vue';
+import HeaderLogoCenter from '../components/header/HeaderLogoCenter.vue';
 </script>
 
 <template>
   <div class="right_side_view">
     <h1><span>Header</span></h1>
-    <DefaultHeader />
-    <DefaultHeader />
-    <DefaultHeader />
-    <DefaultHeader />
-    <DefaultHeader />
-    <DefaultHeader />
+    <HeaderSpaceBetween />
+    <HeaderFlexStart />
+    <HeaderLogoCenter />
   </div>
 </template>
 

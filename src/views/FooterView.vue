@@ -8,14 +8,16 @@
 
 <style lang="scss" scoped>
 .right_side_view {
-  width: 85%;
-  height: 100%;
-  background-color: var(--white);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  position: absolute;
+    right: 0;
+    top: 0;
+    width: 85%;
+    height: auto;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 
   h1 {
     font-size: 5vw;

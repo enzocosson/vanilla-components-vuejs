@@ -49,7 +49,7 @@ p{
   }
 }
   .illustration{
-width: 40vw;
+    width: 40vw;
   }
 }
 </style>
