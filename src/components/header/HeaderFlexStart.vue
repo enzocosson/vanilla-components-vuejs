@@ -1,8 +1,23 @@
 <script setup>
 import { ref } from 'vue'
+
 const selCode = ref(false)
+const htmlCopyBtn = ref(null)
+const scssCopyBtn = ref(null)
+
 const setSelCode = (code) => {
   selCode.value = code
+}
+
+const copyToClipboard = (code) => {
+  navigator.clipboard
+    .writeText(code)
+    .then(() => {
+      console.log(`Copied to clipboard: ${code}`)
+    })
+    .catch((error) => {
+      console.error(`Error copying to clipboard: ${error}`)
+    })
 }
 </script>
 
@@ -36,7 +51,7 @@ const setSelCode = (code) => {
           <pre>
             <div class="title">
                <span>HTML</span>
-               <v-btn>copy</v-btn>
+               <v-btn @click="copyToClipboard(htmlCode)" ref="htmlCopyBtn">copy</v-btn>
              </div>
              <div class="container__code">
                   <code class="html">
